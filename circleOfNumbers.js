@@ -42,7 +42,8 @@ function circleOfNumbers2(n, firstNumber) {
 	return circle[firstNumber - halfWay];
 }
 
-console.log(circleOfNumbers2(12, 13));
+console.log(circleOfNumbers(12, 6));
+console.log(circleOfNumbers2(12, 6));
 
 
 
