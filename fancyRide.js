@@ -9,19 +9,19 @@
 	Find the best car you can afford.
 
 	Ex:
-		For I = 30 and fares = [0.3, 0.5, 0.7, 1, 1.3], the output should be
-		fancyRides(I, fares) = 'UberXL'.
+		For l = 30 and fares = [0.3, 0.5, 0.7, 1, 1.3], the output should be
+		fancyRides(l, fares) = 'UberXL'.
 
 		The cost for the ride in this car would be $15, which you can afford,
 		but 'UberPlus' would cost $21, which is too much for you.
 */
 
-function fancyRide(I, fares) {
+function fancyRide(l, fares) {
 
 	const affordedRides = {};
 
 	for (let i = 0; i < fares.length; i++) {
-		if (I * fares[i] <= 20) {
+		if (l * fares[i] <= 20) {
 			affordedRides[i] = fares[i];
 		}
 	}
@@ -48,7 +48,17 @@ function fancyRide(I, fares) {
 
 }
 
+function fancyRide2(l, fares) {
+	const rides = ['UberX', 'UberXL', 'UberPlus', 'UberBlack', 'UberSUV'];
+	for (let i = fares.length - 1; i >= 0; i--) {
+		if (l * fares[i] <= 20) {
+			return rides[i];
+		}
+	}
+}
+
 const I = 30;
 const fares = [0.3, 0.5, 0.7, 1, 1.3];
 
 console.log(fancyRide(I, fares));
+console.log(fancyRide2(I, fares));
