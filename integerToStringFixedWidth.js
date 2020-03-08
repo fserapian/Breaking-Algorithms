@@ -23,25 +23,29 @@ function integerToStringOfFixedWidth(number, width) {
 				for (let i = 0; i < zerosToAdd; i++) {
 						resString += '0';
 				}
-		}
-
-		for (let i = 0; i < numberWidth; i++) {
+				for (let i = 0; i < numberWidth; i++) {
 						resString += numString[i];
+				}
+		} else {
+				for (let i = diff; i < numberWidth; i++) {
+						resString += numString[i];
+				}
 		}
 
 		return resString;
-		
-
 }
 
-const number = 1234;
-const width = 5;
-console.log(integerToStringOfFixedWidth(number, width));
 
-const number1 = 34;
+const number1 = 1234;
 const width1 = 2;
 console.log(integerToStringOfFixedWidth(number1, width1));
 
 const number2 = 1234;
 const width2 = 4;
 console.log(integerToStringOfFixedWidth(number2, width2));
+
+const number = 1234;
+const width = 5;
+console.log(integerToStringOfFixedWidth(number, width));
+
+
