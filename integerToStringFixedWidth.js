@@ -23,9 +23,7 @@ function integerToStringOfFixedWidth(number, width) {
 				for (let i = 0; i < zerosToAdd; i++) {
 						resString += '0';
 				}
-				for (let i = 0; i < numberWidth; i++) {
-						resString += numString[i];
-				}
+				resString += numString;
 		} else {
 				for (let i = diff; i < numberWidth; i++) {
 						resString += numString[i];
