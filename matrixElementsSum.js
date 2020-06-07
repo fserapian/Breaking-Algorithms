@@ -32,6 +32,7 @@
 
  */
 
+// Incorrect
 function matrixElementsSum(matrix) {
 	let count = 0;
 
@@ -53,9 +54,31 @@ function matrixElementsSum(matrix) {
 	return count;
 }
 
+// Correct
+function matrixElementsSum1(arr) {
+ 
+    let marked = {};
+    let sum = 0;
+    for (let k = 0; k < arr.length; k++) {
+    	console.log(marked);
+        for (let i = 0; i < arr[k].length; i++) {
+            if (arr[k][i] === 0) {
+                marked[i] = 'x'; 
+            }
+            if (!marked.hasOwnProperty(arr[k][i])) {
+                sum += arr[k][i];
+            }
+        }
+    }
+ 
+    return sum;
+ 
+}
+
 const matrix = [
 	[0, 1, 1, 2],
 	[0, 5, 0, 0],
 	[2, 0, 3, 3],
 ];
 console.log(matrixElementsSum(matrix));
+console.log(matrixElementsSum1(matrix));
