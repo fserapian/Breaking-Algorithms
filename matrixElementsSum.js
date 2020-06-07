@@ -36,7 +36,7 @@
 function matrixElementsSum(matrix) {
 	let count = 0;
 
-	const hauntedIndexes = [];
+	let hauntedIndexes = [];
 
 	for (let i = 0; i < matrix.length; i++) {
 
@@ -50,11 +50,12 @@ function matrixElementsSum(matrix) {
 				count += matrix[i][j];
    	 		}
 		}
+		// hauntedIndexes = [];
 	}
 	return count;
 }
 
-// Correct
+// Correct (Bug)
 function matrixElementsSum1(arr) {
  
     let marked = {};
@@ -63,7 +64,7 @@ function matrixElementsSum1(arr) {
     	console.log(marked);
         for (let i = 0; i < arr[k].length; i++) {
             if (arr[k][i] === 0) {
-                marked[i] = 'x'; 
+                marked[i] = 0; 
             }
             if (!marked.hasOwnProperty(arr[k][i])) {
                 sum += arr[k][i];
@@ -72,13 +73,12 @@ function matrixElementsSum1(arr) {
     }
  
     return sum;
- 
 }
 
 const matrix = [
-	[0, 1, 1, 2],
+	[0, 0, 1, 2],
 	[0, 5, 0, 0],
-	[2, 0, 3, 3],
+	[2, 4, 3, 3],
 ];
 console.log(matrixElementsSum(matrix));
 console.log(matrixElementsSum1(matrix));
