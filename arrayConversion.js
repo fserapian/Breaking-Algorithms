@@ -1,3 +1,5 @@
+/******************************* ARRAY CONVERSION *****************************/
+
 /* Given an array of 2k integers (for some integer k), perform the following operations
 	until the array contains only one element:
 * On the 1st, 3rd, 5th, etc. iterations (1-based) replace each pair of consecutive
@@ -15,6 +17,7 @@ So the answer is 186
 
 function arrayConversion(arr) {
 	let isOdd = true;
+
 	while (arr.length !== 1) {
 		arr = sumProduct(arr, isOdd);
 		isOdd = !isOdd;
@@ -25,29 +28,15 @@ function arrayConversion(arr) {
 function sumProduct(arr, isOdd) {
 	const newArr = [];
 	if (isOdd) {
-		for (let i = 0; i < arr.length; i += 2) {
-			newArr.push(arr[i] + arr[i + 1]);
+		for (let i = 1; i < arr.length; i += 2) {
+			newArr.push(arr[i - 1] + arr[i]);
 		}
 	} else {
-		for (let i = 0 ; i < arr.length; i += 2) {
-			newArr.push(arr[i] * arr[i + 1]);
+		for (let i = 1; i < arr.length; i += 2) {
+			newArr.push(arr[i - 1] * arr[i]);
 		}
 	}
 	return newArr;
 }
 
-const arr = [1, 2, 3, 6];
-
-console.log(arrayConversion(arr));
-
-
-
-
-
-
-
-
-
-
-
-
+console.log(arrayConversion([1, 2, 3, 4, 5, 6, 7, 8]));
