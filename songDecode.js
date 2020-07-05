@@ -19,9 +19,9 @@ function songDecode1(song) {
 }
 
 function songDecode2(song) {
-	return song.replace(/(WUB)+/g, ' ');
+	return song.replace(/(WUB)+/g, ' ').trim();
 }
 
-console.log(songDecode('WEWUBAREWUBWUBTHEWUBWUBWUBCHAMPIONSWUBWUB'));
-console.log(songDecode1('WEWUBAREWUBWUBTHEWUBWUBWUBCHAMPIONSWUBWUB'));
-console.log(songDecode2('WEWUBAREWUBWUBTHEWUBWUBWUBCHAMPIONSWUBWUB'));
+console.log(songDecode('WUBWEWUBAREWUBWUBTHEWUBWUBWUBCHAMPIONSWUBWUB'));
+console.log(songDecode1('WUBWEWUBAREWUBWUBTHEWUBWUBWUBCHAMPIONSWUBWUB'));
+console.log(songDecode2('WUBWEWUBAREWUBWUBTHEWUBWUBWUBCHAMPIONSWUBWUB'));
