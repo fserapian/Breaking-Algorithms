@@ -49,7 +49,7 @@ function palindromRearranging(inputString) {
 
 	for (let key in lettersObj) {
 		if (lettersObj[key] % 2 !== 0) {
-			oddValues++;
+			oddCount++;
 		}
 	}
 
