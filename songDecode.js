@@ -1,9 +1,9 @@
 /************************** SONG DECODE ****************************/
 /*
 	Example:
-		song = 'WEWUBAREWUBWUBTHEWUBWUBWUBCHAMPIONSWUBWUB';
+		song = 'WEWUBAREWUBWUBTHEWUBWUBWUBCHAMPIONSWUBWUB'; // Distortion word is WUB
 
-		songDecode(song) = 'WE ARE THE CHAMPIONS MY FRIEND'
+		songDecode(song) = 'WE ARE THE CHAMPIONS'
  */
 
 function songDecode(song) {
