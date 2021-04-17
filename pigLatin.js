@@ -34,5 +34,28 @@ function pigLatin(word) {
 	return transformed;
 }
 
+function pigLatin1(word) {
+	vowels = ['a', 'e', 'i', 'o', 'u'];
+
+	if (vowels.includes(word[0])) {
+		return word + 'way';
+	}
+
+	let firstPart = '';
+	let secondPart = '';
+	for (let i = 0; i < word.length; i++) {
+		if (vowels.includes(word[i])) {
+			firstPart += word.slice(i);
+			break;
+		}
+
+		secondPart += word[i];
+	}
+
+	return firstPart + secondPart + 'ay';
+}
+
 console.log(pigLatin('glove'));
 console.log(pigLatin('eight'));
+console.log(pigLatin1('glove'));
+console.log(pigLatin1('eight'));
