@@ -10,11 +10,11 @@
 
 	Example:
 		pigLatin('glove') should return 'oveglay'.
-		pigLatin('eight') should return 'eightway'
+		pigLatin('eight') should return 'eightway'.
  */
 
 function pigLatin(word) {
-	vowels = ['a', 'e', 'i', 'o', 'u'];
+	const vowels = ['a', 'e', 'i', 'o', 'u'];
 
 	let transformed = '';
 	if (vowels.includes(word[0])) {
@@ -35,7 +35,7 @@ function pigLatin(word) {
 }
 
 function pigLatin1(word) {
-	vowels = ['a', 'e', 'i', 'o', 'u'];
+	const vowels = ['a', 'e', 'i', 'o', 'u'];
 
 	if (vowels.includes(word[0])) {
 		return word + 'way';
