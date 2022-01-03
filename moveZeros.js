@@ -16,6 +16,7 @@ function moveZeros(arr) {
 	return arr;
 }
 
+// Better
 function moveZeros1(arr) {
 	const resArr = [];
 	let zeroCount = 0;
@@ -32,5 +33,18 @@ function moveZeros1(arr) {
 	return resArr;
 }
 
+// Even better
+function moveZeros2(arr) {
+	const zeros = arr.filter((el) => el === 0);
+	const noZeros =  arr.filter((el) => el !== 0);
+
+	return [...noZeros, ...zeros];
+}
+
+// One liner
+const moveZeros3 = (arr) => [...arr.filter((el) => el !== 0), ...arr.filter((el) => el === 0)];
+
 console.log(moveZeros([false, 8, 'hfds', 0, 'h', 0, true]));
 console.log(moveZeros1([false, 8, 'hfds', 0, 'h', 0, true]));
+console.log(moveZeros2([false, 8, 'hfds', 0, 'h', 0, true]));
+console.log(moveZeros3([false, 8, 'hfds', 0, 'h', 0, true]));
