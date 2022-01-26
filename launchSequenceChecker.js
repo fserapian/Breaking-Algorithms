@@ -32,5 +32,23 @@ function launchSequenceChecker(systemNames, stepNumbers) {
     return true;
 }
 
+function launchSequenceChecker1(systemNames, stepNumbers) {
+    const obj = {};
+    for (let i = 0; i < systemNames.length; i++) {
+        if (! systemNames[i] in obj) {
+            obj[systemNames[i]] = stepNumbers[i];
+        } else {
+            if (obj[systemNames[i]] >= stepNumbers[i]) {
+                return false;
+            }
+            obj[systemNames[i]] = stepNumbers[i];
+        }
+    }
+    return true;
+}
+
 console.log(launchSequenceChecker(['one', 'two', 'two', 'one'], [1, 3, 2, 4]));
 console.log(launchSequenceChecker(['one', 'two', 'two', 'one'], [1, 2, 3, 4]));
+
+console.log(launchSequenceChecker1(['one', 'two', 'two', 'one'], [1, 3, 2, 4]));
+console.log(launchSequenceChecker1(['one', 'two', 'two', 'one'], [1, 2, 3, 4]));
