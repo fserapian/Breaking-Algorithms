@@ -13,22 +13,26 @@ function flattenArray(nested) {
     flatten(nested);
 
     function flatten(nested) {
-        nested.forEach(elem => {
-            if (Array.isArray(elem)) {
-                flatten(elem);
+        for (let i = 0; i < nested.length; i++) {
+            const el = nested[i];
+
+            if (Array.isArray(el)) {
+                flatten(el);
             } else {
-                flattened.push(elem);
+                flattened.push(el);
             }
-        });
+        }
     }
 
     return flattened;
 }
 
-// function flattenArray(nested) {
-//     return nested.flat(Number.MAX_SAFE_INTEGER);
-// }
+// With flat function
+function flattenArray1(nested) {
+    return nested.flat(Infinity);
+}
 
 console.log(flattenArray([1, 3, [[[5]]]]));
 console.log(flattenArray([[['a']], [['b']]]));
-
+console.log(flattenArray1([1, 3, [[[5]]]]));
+console.log(flattenArray1([[['a']], [['b']]]));
