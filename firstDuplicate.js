@@ -19,7 +19,7 @@ function firstDuplicate(a) {
     let firstDuplicate = {};
 
     for (let num of a) {
-        if (firstDuplicate.hasOwnProperty(num)) {
+        if (num in firstDuplicate) { // firstDuplicate.hasOwnProperty(num)
             return num;
         }
 
