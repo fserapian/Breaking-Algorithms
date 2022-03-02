@@ -4,6 +4,7 @@
         For inputString = 'var_1__Int', firstDigit(inputString) = '1',
         For inputString = 'q2q-q', firstDigit(inputString) = '1',
         For inputString = '0ss', firstDigit(inputString) = '0',
+        For inputString = 'word', firstDigit(inputString) = null,
 */
 
 function firstDigit(str) {
@@ -12,12 +13,15 @@ function firstDigit(str) {
             return str[i];
         }
     }
+
+    return null;
 }
 
-const firstDigit1 = str => {
-    let ans = '';
-    str.split('').forEach(c => {
-        if (!isNaN(parseInt(c))) {
+const firstDigit1 = (str) => {
+    let ans = null;
+
+    str.split('').forEach((c) => {
+        if (! isNaN(+c)) {
             ans = c;
         }
     });
@@ -33,8 +37,16 @@ function firstDigit2(str) {
             return str[i];
         }
     }
+
+    return null;
 }
 
 console.log(firstDigit('var_1__Int'));
 console.log(firstDigit1('var_1__Int'));
+console.log(firstDigit2('var_1__Int'));
+console.log(firstDigit('0ss'));
+console.log(firstDigit1('0ss'));
 console.log(firstDigit2('0ss'));
+console.log(firstDigit('word'));
+console.log(firstDigit1('word'));
+console.log(firstDigit2('word'));
