@@ -18,11 +18,10 @@
 function findEmailDomain(address) {
     const atIndex = address.lastIndexOf('@');
     return address.substr(atIndex);
-    // return address.slice(atIndex);
 }
 
-// In one line
-const findEmailDomain1 = address => address.substr(address.lastIndexOf('@'));
+// One liner
+const findEmailDomain1 = (address) => address.slice(address.lastIndexOf('@'));
 
 
 console.log(findEmailDomain('fad@8f@i.serapian@gmail.com'));
