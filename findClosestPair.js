@@ -15,6 +15,7 @@
         There are no pairs that have a sum of 8.
 */
 
+// Ok
 function findClosestPair(numbers, sum) {
     const distances = [];
     for (let i = 0; i < numbers.length; i++) {
@@ -27,6 +28,7 @@ function findClosestPair(numbers, sum) {
     return Math.min(...distances) === Infinity ? -1 : Math.min(...distances);
 }
 
+// Better
 function findClosestPair1(numbers, sum) {
     let distance = -1;
 
@@ -49,5 +51,5 @@ function findClosestPair1(numbers, sum) {
 
 const numbers = [1, 0, 2, 4, 3, 0];
 const sum = 5;
-console.log(findClosestPair(numbers, sum))
-console.log(findClosestPair1(numbers, sum))
+console.log(findClosestPair(numbers, sum));
+console.log(findClosestPair1(numbers, sum));
