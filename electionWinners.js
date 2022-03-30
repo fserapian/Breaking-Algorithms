@@ -11,9 +11,9 @@ the same (maximum) number of votes, assume there is no winner
 at all.
 
 Ex: const votes = [2, 3, 5, 2];
-	const k = 3;
+    const k = 3;
 
-	electionWinners(votes, k) = 2
+    electionWinners(votes, k) = 2
 
 The first candidate got 2 votes. Even if all of the remaining
 3 candidates vote for him, he will still have only 5 votes.
@@ -36,15 +36,14 @@ which is the answer
 */
 
 function electionWinners(votes, k) {
-	const currentWinner = Math.max(...votes);
-	const potentialWinners = votes.filter(num => {
-		return (num + k) > currentWinner;
-	});
-	return potentialWinners.length;
+    const currentWinner = Math.max(...votes);
+
+    const potentialWinners = votes.filter((vote) => {
+        return (vote + k) > currentWinner;
+    });
+
+    return potentialWinners.length;
 }
 
-const votes = [2, 3, 5, 2, 1, 3];
-const k = 3;
-
-console.log(electionWinners(votes, k));
-
+console.log(electionWinners([2, 3, 5, 2], 3));
+console.log(electionWinners([2, 3, 5, 2, 1, 3], 3));
