@@ -10,40 +10,46 @@
 */
 
 function circleOfNumbers(n, firstNumber) {
-	for (let i = 0; i < n; i++) {
-		if (firstNumber >= n) {
-			return undefined;
-		}
-		if (firstNumber === n / 2) {
-			return 0;
-		}
-		if (firstNumber < n / 2) {
-			return n / 2 + firstNumber;
-		}
-		if (firstNumber > n / 2) {
-			return n / 2 - (n - firstNumber);
-		}
-	}
+  for (let i = 0; i < n; i++) {
+    if (firstNumber >= n) {
+      return null;
+    }
+
+    if (firstNumber === n / 2) {
+      return 0;
+    }
+
+    if (firstNumber < n / 2) {
+      return (n / 2) + firstNumber;
+    }
+
+    if (firstNumber > n / 2) {
+      return (n / 2) - (n - firstNumber);
+    }
+  }
 }
 
 // Another Solution
-function circleOfNumbers2(n, firstNumber) {
-	const circle = [];
-	const halfWay = n / 2;
-	for (let i = 0; i < n; i++) {
-		circle.push(i);
-	}
-	if (firstNumber >= n) {
-		return undefined;
-	}
-	if (firstNumber < halfWay) {
-		return circle[halfWay + firstNumber];
-	}
-	return circle[firstNumber - halfWay];
+function circleOfNumbers1(n, firstNumber) {
+  const circle = [];
+  const halfWay = n / 2;
+
+  for (let i = 0; i < n; i++) {
+    circle.push(i);
+  }
+
+  if (firstNumber >= n) {
+    return null;
+  }
+
+  if (firstNumber < halfWay) {
+    return circle[halfWay + firstNumber];
+  }
+
+  return circle[firstNumber - halfWay];
 }
 
 console.log(circleOfNumbers(12, 6));
-console.log(circleOfNumbers2(12, 6));
-
-
-
+console.log(circleOfNumbers1(12, 6));
+console.log(circleOfNumbers(10, 2));
+console.log(circleOfNumbers1(10, 2));
