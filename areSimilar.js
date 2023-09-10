@@ -38,6 +38,43 @@ function areSimilar(arr1, arr2) {
   return false;
 }
 
+function areArraysSimilar(arr1, arr2) {
+    if (arr1.length !== arr2.length) {
+        return false;
+    }
+
+    const diffIndices = [];
+    const diffValues = [];
+
+    for (let i = 0; i < arr1.length; i++) {
+        if (arr1[i] !== arr2[i]) {
+            diffIndices.push(i);
+            diffValues.push(arr1[i]);
+        }
+    }
+
+    if (diffIndices.length === 0 || diffIndices.length === 2) {
+        const [index1, index2] = diffIndices;
+        const [value1, value2] = diffValues;
+
+        // Check if swapping makes the arrays identical
+        if (
+            arr1[index1] === arr2[index2] &&
+            arr1[index2] === arr2[index1]
+        ) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
 console.log(areSimilar([1, 3, 4], [3, 1, 4]));
 console.log(areSimilar([1, 1, 2], [1, 2, 2]));
 console.log(areSimilar([1, 5, 8, 3, 7], [7, 5, 8, 3, 1]));
+
+console.log('------');
+
+console.log(areArraysSimilar([1, 3, 4], [3, 1, 4]));
+console.log(areArraysSimilar([1, 1, 2], [1, 2, 2]));
+console.log(areArraysSimilar([1, 5, 8, 3, 7], [7, 5, 8, 3, 1]));
