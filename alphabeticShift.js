@@ -31,4 +31,31 @@ function alphabeticShift(str) {
     .join('');
 }
 
+function alphabeticShift1(inputString) {
+    if (!inputString) {
+        return "";
+    }
+
+    let shiftedString = "";
+    for (let i = 0; i < inputString.length; i++) {
+        let char = inputString.charAt(i);
+
+        if (char.match(/[a-z]/i)) {
+            if (char === 'z') {
+                shiftedString += 'a';
+            } else if (char === 'Z') {
+                shiftedString += 'A';
+            } else {
+                const shiftedChar = String.fromCharCode(char.charCodeAt(0) + 1);
+                shiftedString += shiftedChar;
+            }
+        } else {
+            shiftedString += char;
+        }
+    }
+
+    return shiftedString;
+}
+
 console.log(alphabeticShift('abcdzAZH'));
+console.log(alphabeticShift1('abcdzAZH'));
